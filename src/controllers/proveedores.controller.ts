@@ -31,3 +31,4 @@ export class ProveedoresController {
     EliminarProveedor(@Param('id') id : string) : string {
         return 'Eliminar un proveedor.'
     }
+}

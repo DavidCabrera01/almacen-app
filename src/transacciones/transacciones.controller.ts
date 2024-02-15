@@ -1,34 +1,29 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { TransaccionesService } from './transacciones.service';
-import { CreateTransaccioneDto } from './dto/create-transaccione.dto';
-import { UpdateTransaccioneDto } from './dto/update-transaccione.dto';
+
 
 @Controller('transacciones')
 export class TransaccionesController {
   constructor(private readonly transaccionesService: TransaccionesService) {}
 
-  @Post()
-  create(@Body() createTransaccioneDto: CreateTransaccioneDto) {
-    return this.transaccionesService.create(createTransaccioneDto);
-  }
-
+  //Obtener todas las transacciones.
   @Get()
   findAll() {
     return this.transaccionesService.findAll();
   }
-
+  //Obtener detalles de una transacción específica.
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.transaccionesService.findOne(+id);
   }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateTransaccioneDto: UpdateTransaccioneDto) {
-    return this.transaccionesService.update(+id, updateTransaccioneDto);
+  //Registrar una nueva transacción de entrada.
+  @Post('entrada')
+  registrarEntradaTransaccion(@Param('entrada') entrada: string) {
+    return ;
   }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.transaccionesService.remove(+id);
+  //Registrar una nueva transacción de salida.
+  @Post('salida')
+  registrarSalidaTransaccion(@Param('salida') salida: string) {
+    return ;
   }
 }

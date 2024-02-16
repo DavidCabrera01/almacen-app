@@ -1,18 +1,10 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class Elememto{
+export class Proveedores{
     @PrimaryGeneratedColumn()
     id:number;
 
     @Column()
-    nombre:string;
-
-    @Column()
-    descripcion:string;
-
-    @Column()
-    cantidad:number;
-    
-
+    nombre:string;    
 }

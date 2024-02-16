@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { SistemaAlmecenModule } from './sistema-almecen/sistema-almecen.module';
 
 
 
@@ -15,7 +16,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     database: "almacen",
     autoLoadEntities: true,
     synchronize: true,
-  }),],
+  }), SistemaAlmecenModule,],
   controllers: [AppController,],
   providers: [AppService],
 })
